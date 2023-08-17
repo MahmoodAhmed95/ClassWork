@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quiz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Quiz Time!</h1>
+    <div id="quiz-container">
+        <h3 id="question"></h3>
+        <ul id="answers"></ul>
+    </div>
+
+    <script>
+        // Create a list of questions, choices and correct answer
+        const questions = [
+            {
+                question: "What is the capital of France?",
+                answers: ["Paris", "London", "Rome", "Berlin"],
+                correctAnswer: "Paris",
+            },
+            {
+                question: "Who painted the Mona Lisa?",
+                answers: [
+                    "Leonardo da Vinci",
+                    "Pablo Picasso",
+                    "Vincent van Gogh",
+                    "Michelangelo",
+                ],
+                correctAnswer: "Leonardo da Vinci",
+            },
+            {
+                question: "Which planet is known as the Red Planet?",
+                answers: ["Mars", "Jupiter", "Venus", "Mercury"],
+                correctAnswer: "Mars",
+            },
+            {
+                question:
+                    "Who would win in a hammer fight, Tor or ChatGPT (in Brad Pitt form)??",
+                answers: ["Tor, duh!", "chatGPT", "Neither", "It would be a tie!"],
+                correctAnswer: "Tor, duh!",
+            },
+        ];
+
+        // Global variables
+        // Current question that we are on
+        let currentQuestion = 0;
+        // Keep track of the score
+        let score = 0;
+
+        // show current question + choices
+        function displayQuestion() {
+            // Questions
+            const question = questions[currentQuestion].question;
+            // Choices
+            const choices = questions[currentQuestion].answers; //
+
+            // Show question on the HTML page
+            const questionEl = $("#question");
+            questionEl.empty();
+            questionEl.text(question);
+
+            // Clear out answers/choices element
+            const answersEl = $("#answers");
+            answersEl.empty();
+            // Loop through the choices / answers and create a new li element each time
+            choices.forEach(function (answer) {
+                // Create a li element and add the choice / answer text
+                const choice = $("<li>").text(answer);
+                // Append to answers list
+                answersEl.append(choice);
+            });
+        } // End of display questions
+
+        // check if selected choice is correct
+        // show the results
+
+        $(document).ready(function () {
+            displayQuestion();
+        });
+    </script>
+</body>
+
+</html>

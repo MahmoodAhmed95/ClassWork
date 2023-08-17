@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers Skill Lab</title>
+</head>
+
+<body>
+    <style type="text/css">
+        body {
+            background-color: yellowgreen;
+            color: darkolivegreen;
+        }
+
+        h1 {
+            font-weight: bold;
+            text-align: center;
+            font-size: 100px;
+        }
+
+        a:visited {
+            color: royalblue;
+        }
+
+        a:hover {
+            color: #B4045F;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+    </style>
+    <h1>My skills</h1>
+    <ul>
+        <% skills.forEach(function(t) { %>
+            <li>
+                <a href="/skills/<%=t.id%>">
+                    <%= t.skill %>
+                </a>
+            </li>
+            <% }); %>
+    </ul>
+</body>
+
+</html>

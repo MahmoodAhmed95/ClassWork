@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+    <form id="edit" action="/todos/<%= todo.id %>?_method=PUT" method="POST">
+        <div>
+            <input type="text" name="todo" value="<%= todo.todo %>">
+        </div>
+        <div>
+            <input class="check" type="checkbox" name="done" <%=todo.done? 'done' : 'not done' %>>
+            <label for="edit">completed</label>
+        </div>
+        <div>
+            <button type="submit">Update To-Do</button>
+        </div>
+    </form>
+
+    <%- include('../partials/footer') %>

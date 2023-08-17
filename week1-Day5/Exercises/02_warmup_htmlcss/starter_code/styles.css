@@ -1,0 +1,15 @@
+.upimages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* width: 25vw; */
+}
+.downBig {
+    display: grid;
+    grid-template-rows: 8fr 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+}
+.inside {
+    width: 25vw;
+    height: 40vh;
+}

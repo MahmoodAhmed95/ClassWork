@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+
+    <form action="/todos" method="POST" autocomplete="off">
+        <label for="theTitle">New To-do</label>
+        <input type="text" name="theTitle" id="theTitle">
+        <button type="submit">Save Todo</button>
+    </form>
+
+    <%- include('../partials/footer') %>

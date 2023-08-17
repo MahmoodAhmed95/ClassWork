@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quiz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Quiz Time!</h1>
+    <div id="quiz-container">
+        <h3 id="question"></h3>
+        <ul id="answers"></ul>
+    </div>
+
+    <script>
+        // Create a list of questions, choices and correct answer
+        const questions = [
+            {
+                question: "What is the capital of France?",
+                answers: ["Paris", "London", "Rome", "Berlin"],
+                correctAnswer: "Paris"
+            },
+            {
+                question: "Who painted the Mona Lisa?",
+                answers: ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo"],
+                correctAnswer: "Leonardo da Vinci"
+            },
+            {
+                question: "Which planet is known as the Red Planet?",
+                answers: ["Mars", "Jupiter", "Venus", "Mercury"],
+                correctAnswer: "Mars"
+            },
+            {
+                question: "Who would win in a hammer fight, Tor or ChatGPT (in Brad Pitt form)??",
+                answers: ["Tor, duh!", "chatGPT", "Neither", "It would be a tie!"],
+                correctAnswer: "Tor, duh!"
+            }
+        ];
+        let correctQ = 0;
+        let score = 0;
+
+        function displayQ() {
+            const Qus = questions[correctQ].question;
+
+            const Chois = questions[correctQ].answers;
+
+            const q = $("#question");
+            q.empty();
+            q.text(Qus);
+
+            const answerE = $("#answers");
+            answerE.empty();
+
+            Chois.forEach(function (answer) {
+
+                const choice = $("<li>").text(answer);
+
+                answerE.append(choice);
+            });
+
+        }
+        $(document).ready(function () {
+
+            displayQ();
+
+        });
+    </script>
+</body>
+
+</html>

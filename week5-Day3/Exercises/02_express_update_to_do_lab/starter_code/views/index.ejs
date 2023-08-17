@@ -1,0 +1,9 @@
+<%- include('./partials/header') %>
+    <% todos.forEach(function(t) { %>
+        <li>
+            <form action="/todos/<%= t.id %>?_method=DELETE" class="delete-form" method="POST">
+                <button type="submit">X</button>
+            </form>
+        </li>
+        <% }) %>
+            <%- include('./partials/footer') %>

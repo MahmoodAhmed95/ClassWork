@@ -1,0 +1,98 @@
+body {
+  font-family: "Lora", serif;
+  width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: "Staatliches", cursive;
+  font-size: 60px;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
+.text-time {
+  text-align: center;
+}
+
+.button {
+  color: black;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px auto;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 300px;
+}
+
+.subtle-button {
+  background-color: goldenrod;
+  transition: background-color 0.3s ease-in-out;
+}
+.subtle-button:hover {
+  background-color: coral;
+}
+
+.sideways-gradient {
+  height: 200px;
+  margin: 10px;
+  background-image: linear-gradient(to left, orange, blue);
+}
+@keyframes spinMe {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.mcconaughey {
+  animation: spinMe 2s infinite linear;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes dance {
+  0% {
+    transform: rotate(0), skew(0);
+  }
+  33% {
+    opacity: 0.5;
+    transform: skew(20deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+  66% {
+    opacity: 0.5;
+    transform: skew(-20deg);
+  }
+  100% {
+    transform: rotate(0), skew(0);
+    opacity: 1;
+  }
+}
+
+.ice-cream-dance {
+  animation: dance 2s infinite linear;
+}
+
+.mcconaughey-caption {
+  text-align: center;
+  animation: fade 3s infinite ease-in-out;
+}
